@@ -1,0 +1,13 @@
+BEGIN
+    LIST items
+    READ AND WRITE 'total_jumlah_barang' with number
+    READ AND WRITE 'shopping_cart' with number
+
+    if isItemAvailable
+        shopping_cart ADD userItems 
+        STORE 'total_jumlah_barang' with calculate 'shopping_cart'
+
+    ELSE
+        print('item not available')
+
+END
